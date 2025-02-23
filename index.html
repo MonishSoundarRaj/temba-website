@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="MS-Temba: Multi-scale Temporal Mamba for Efficient Action Detection in Long Videos">
+  <meta property="og:title" content="MS-Temba: Multi-scale Temporal Mamba"/>
+  <meta property="og:description" content="A novel Mamba-based architecture achieving state-of-the-art performance with 88.5% fewer parameters"/>
+  <meta property="og:url" content="[Your project page URL]"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MS-Temba: Multi-scale Temporal Mamba for Efficient Action Detection in Long Videos</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Update with actual author names and links -->
+              <span class="author-block">
+                <a href="https://thearkaprava.github.io/" target="_blank">Arkaprava Sinha</a>,</span>
+                <span class="author-block">
+                  <a href="https://monishsoundarraj.com/" target="_blank">Monish Soundar Raj</a>,</span>
+                  <span class="author-block">
+                    <a href="https://webpages.charlotte.edu/pwang13/" target="_blank">Pu Wang</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://sites.google.com/uncc.edu/helmy/home" target="_blank">Ahmed Helmy</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://srijandas07.github.io/" target="_blank">Srijan Das</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">UNC Charlotte<br>arXiv 2024</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2501.06138" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/thearkaprava/MS-Temba" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2501.06138" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/teaser.mp4" type="video/mp4">
+      </video> -->
+      <!-- <img src="static/images/model_arch.png" alt="Temba Block"/> -->
+      <h2 class="subtitle has-text-centered">
+        MS-Temba achieves state-of-the-art performance on long-video datasets and matches the best-performing method on short-video datasets, using 88.5% fewer parameters. The model's efficiency increases with video duration, making it ideal for processing hour-long videos.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Abstract Section -->
+<section class="section abstract-section">
+  <div class="container is-max-desktop">
+    <div class="section-header">
+      <h2 class="title is-3">Abstract</h2>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Action detection in real-world scenarios is particularly
+            challenging due to densely distributed actions in hour-long
+            untrimmed videos. It requires modeling both short- and
+            long-term temporal relationships while handling significant
+            intra-class temporal variations. Previous state-of-the-art
+            (SOTA) Transformer-based architectures, though effective,
+            are impractical for real-world deployment due to their high
+            parameter count, GPU memory usage, and limited throughput.
+          </p>
+          <p>
+            We propose Multi-scale Temporal Mamba (MS-Temba), comprising two key components: 
+            Temporal Mamba (Temba) Blocks and the Temporal Mamba Fuser.
+            Temba Blocks include the Temporal Local Module (TLM)
+            for short-range temporal modeling and the Dilated Temporal
+            SSM (DTS) for long-range dependencies. By introducing
+            dilations, a novel concept for Mamba, TLM and DTS
+            capture local and global features at multiple scales.
+          </p>
+          <p>
+            MS-Temba is validated on three public datasets, outperforming SOTA methods on long videos
+            and matching prior methods on short videos while using
+            only one-eighth of the parameters.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <!-- <div class="item">
+          <img src="static/images/model_arch.png" alt="MS-Temba Architecture"/>
+          <h2 class="subtitle has-text-centered">
+            Overall Architecture of MS-Temba for action detection, composed of a Visual Backbone, Temporal Encoder with Temba Blocks, Temporal Mamba Fuser and Classification Head.
+          </h2>
+        </div> -->
+        <div class="item">
+          <img src="static/images/Temba.png" alt="Temba Block"/>
+          <h2 class="subtitle has-text-centered">
+            Temba Block consisting of a Temporal Local Module (TLM) and Dilated Temporal SSM for learning local and long-range temporal dependencies.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/heatmap_v2.png" alt="Qualitative Results"/>
+          <h2 class="subtitle has-text-centered">
+            Qualitative comparison showing MS-Temba's superior action detection performance.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+<!-- End carousel section -->
+
+<!-- Performance Analysis Section -->
+<section class="section performance-section">
+  <div class="container is-max-desktop">
+    <div class="section-header">
+      <h2 class="title is-3">Performance Analysis</h2>
+    </div>
+    <div class="multi-image-container">
+      <div class="image-row">
+        <img src="static/images/accuracy_v2.png" alt="Accuracy vs Duration"/>
+        <img src="static/images/Throughput_v2.png" alt="Throughput vs Duration"/>
+        <img src="static/images/ap_dur_mean_sd_v3.png" alt="Top 5 Improvements"/>
+      </div>
+    </div>
+    <h2 class="subtitle has-text-centered">
+      Left: MS-Temba's accuracy improvements with video duration. Middle: Throughput comparison showing MS-Temba's efficiency gains. Right: Top-5 action improvements over baseline methods.
+    </h2>
+  </div>
+</section>
+
+<!-- Key Contributions -->
+<section class="section contributions-section">
+  <div class="container is-max-desktop">
+    <div class="section-header">
+      <h2 class="title is-3">Key Contributions</h2>
+    </div>
+    <div class="contribution-grid">
+      <div class="contribution-card">
+        <div class="card-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="card-content-wrapper">
+          <h3 class="card-title">Novel Architecture</h3>
+          <p class="card-content">
+            Introduction of MS-Temba, a novel Mamba-based architecture tailored for densely labeled Temporal Action Detection, achieving state-of-the-art performance with significantly fewer parameters.
+          </p>
+        </div>
+      </div>
+      
+      <div class="contribution-card">
+        <div class="card-icon">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <div class="card-content-wrapper">
+          <h3 class="card-title">Multi-scale Temporal Modeling</h3>
+          <p class="card-content">
+            Exploration of different temporal scales through novel components in Temba block, especially dilated Temporal SSMs, enabling effective capture of both local and global features.
+          </p>
+        </div>
+      </div>
+      
+      <div class="contribution-card">
+        <div class="card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="card-content-wrapper">
+          <h3 class="card-title">Efficiency Breakthrough</h3>
+          <p class="card-content">
+            Achievement of state-of-the-art performance while using 88% fewer parameters than previous methods, making it practical for real-world deployment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results Section -->
+<section class="section results-section">
+  <div class="container is-max-desktop">
+    <div class="section-header">
+      <h2 class="title is-3">Results</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-header">
+          <i class="fas fa-microchip"></i>
+          <h3>Efficiency</h3>
+        </div>
+        <div class="result-content">
+          <p>88.5% reduction in parameters while maintaining competitive performance</p>
+          <ul>
+            <li>Reduced GPU memory usage</li>
+            <li>Improved throughput</li>
+            <li>Practical for real-world deployment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <i class="fas fa-trophy"></i>
+          <h3>Performance</h3>
+        </div>
+        <div class="result-content">
+          <p>State-of-the-art results across multiple datasets</p>
+          <ul>
+            <li>Superior on long-video datasets</li>
+            <li>Competitive on short-video datasets</li>
+            <li>Effective at multiple temporal scales</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <i class="fas fa-database"></i>
+          <h3>Dataset Validation</h3>
+        </div>
+        <div class="result-content">
+          <p>Comprehensive evaluation on three public datasets:</p>
+          <ul>
+            <li>Toyota Smarthome Untrimmed (TSU)</li>
+            <li>MultiTHUMOS</li>
+            <li>Charades</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Performance Analysis Section -->
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+   
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+         
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+        
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+           
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+<!-- Paper poster -->
+<section class="section paper-section">
+  <div class="container is-max-desktop">
+    <div class="section-header">
+      <h2 class="title is-3">Paper</h2>
+    </div>
+    <iframe  src="https://arxiv.org/pdf/2501.06138" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+<section class="section bibtex-section">
+  <div class="container is-max-desktop content">
+    <div class="section-header">
+      <h2 class="title is-3">BibTeX</h2>
+    </div>
+    <pre><code>@misc{sinha2025mstembamultiscaletemporal,
+      title={MS-Temba : Multi-Scale Temporal Mamba for Efficient Temporal Action Detection}, 
+      author={Arkaprava Sinha and Monish Soundar Raj and Pu Wang and Ahmed Helmy and Srijan Das},
+      year={2025},
+      eprint={2501.06138},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.06138}, 
+}
+</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
